@@ -1,0 +1,21 @@
+The solution is to set the position of the parent element to `relative`. This establishes a containing block for the pseudo-element, preventing it from overflowing.
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  position: relative; /* Solution: Add position: relative */
+}
+div::before {
+  content: '';
+  width: 50px;
+  height: 50px;
+  background-color: lightcoral;
+  position: absolute; /* Optional: For precise positioning */
+  top: 0;
+  left: 0;
+}
+```
+
+By adding `position: relative;` to the parent `div`, the pseudo-element is correctly positioned within the parent. You can also add `position: absolute` to the `::before` element to have more control over its positioning within its parent. 
